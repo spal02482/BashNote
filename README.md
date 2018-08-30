@@ -4,7 +4,7 @@ It provide facilities like:
  - Login User
  - Register User
  - Delete User
- - Quit
+ - Quit  
  Once the Login process is successful, you can see your files, read your 
  files, create a new file, delete your files and sign out of it.
 
