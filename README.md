@@ -12,10 +12,10 @@ It provide facilities like:
 
  1. First, run bashnote-server.sh on the server side. It will check 
  for installation of openssh-server and check whether the 
- service is running or not.
+ service is running or not.  
  `./bashnote-server.sh`  
  2. Then, run bashnote-client.sh on the client side, and it will ask for 
- server's IP address, User Name and the Password.
+ server's IP address, User Name and the Password.  
  `./bashnote-client.sh`  
  Make sure that both of the files are in Executable mode.
  
