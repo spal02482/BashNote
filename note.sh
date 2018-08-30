@@ -23,7 +23,8 @@ do
 		1)
 			username=""
 			login_user
-			if [[ $? -eq 0 ]]; then
+			if [[ $? -eq 0 ]]
+			then
 				echo "Succesfully Logged In..."
 				sleep 0.7;clear
 				source utility.sh
@@ -35,10 +36,12 @@ do
 		2)
 			username=""
 			register_user
-			if [[ $? -eq 0 ]] ; then
+			if [[ $? -eq 0 ]]
+			then
 				echo "Successfully Registered User in Database..."
 				mkdir $NOTEPATH/$username
-				if [ $? -eq 0 ]; then
+				if [[ $? -eq 0 ]]
+				then
 					echo "Directory Successfully Created..."
 					sleep 1;clear
 				fi
@@ -51,10 +54,12 @@ do
 		3)
 			username=""
 			delete_user
-			if [[ $? -eq 0 ]]; then
+			if [[ $? -eq 0 ]]
+			then
 				echo "Successfully User deleted...Restart to take the effect change..." # It's a bug. I don't know why it's happening
 				rm -rf $NOTEPATH/$username
-				if [ $? ];then
+				if [ $? -eq 0 ]
+				then
 					echo "Directory Succesfully Deleted..."
 					sleep 1;clear
 				fi

@@ -5,7 +5,7 @@ delete_user()
 	echo -n `tput cup 1 $(( $col / 2 - 24 ))` 'Username: '
 	read username
 	echo -n `tput cup 2 $(( $col / 2 - 24 ))` 'Password: '
-	read -s password;echo ""
+	read -s password; echo ""
 	flagd=0
 	for i in ${!users[@]}
 	do
@@ -16,7 +16,7 @@ delete_user()
 			fi
 		fi
 	done
-	if [[ $flagd == 1 ]];then
+	if [[ $flagd -eq 1 ]]; then
 		sed -i "/$username/d" $NOTEFILE
 		return 0
 	else

@@ -5,7 +5,7 @@ register_user()
 	echo -n `tput cup 1 $(( $col / 2 - 24 ))` 'Username: '
 	read username
 	echo -n `tput cup 2 $(( $col / 2 - 24 ))` 'Password: '
-	read -s password;echo ""
+	read -s password; echo ""
 	flagr=0
 	for i in ${!users[@]}
 	do
@@ -14,7 +14,7 @@ register_user()
 				break
 		fi
 	done
-	if [[ $flagr == 1 ]];then 
+	if [[ $flagr -eq 1 ]]; then 
 		return 1
 	else 
 		echo "$username $password" >> $NOTEFILE

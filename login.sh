@@ -16,7 +16,7 @@ login_user()
 			fi
 		fi
 	done
-	if [[ $flagl == 1 ]];then 
+	if [[ $flagl -eq 1 ]];then 
 		return 0
 	else 
 		return 1

@@ -10,7 +10,7 @@ if [ ! -d ./notes ]; then
 else
 	echo "directory notes exists, skipping this step..."
 fi
-install=$(dpkg -s openssh-server | grep Status)
+install=$(dpkg --status openssh-server | grep Status)
 if [[ $install == 'Status: install ok installed' ]]; then
 	echo "openssh-server is installed..."
 	serv=$(systemctl status ssh | grep Active: | awk '{print $2;}')

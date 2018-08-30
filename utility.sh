@@ -12,7 +12,8 @@ do
 case $c in 
 	1) 
 		n=$(ls $NOTEPATH/$username | wc -l)
-		if [[ $n -ne 0 ]];then
+		if [[ $n -ne 0 ]]
+		then
 			ls $NOTEPATH/$username
 			read btm
 		else
@@ -23,9 +24,9 @@ case $c in
 	2)
 		echo -n "Enter filename:"
 		read filename
-		ls $NOTEPATH/$username/$filename &> /dev/null
-		if [[ $? -eq 0 ]];then
-			vim $NOTEPATH/$username/$filename
+		if [[ -e $NOTEPATH/$username/$filename ]]
+		then
+			nano $NOTEPATH/$username/$filename
 		else
 			echo "file doesn't exist..."
 			sleep 0.7
@@ -34,9 +35,9 @@ case $c in
 	3)
 		echo -n "Enter filename:"
 		read filename
-		ls $NOTEPATH/$username/$filename &> /dev/null
-		if [[ $? -ne 0 ]];then
-			vim $NOTEPATH/$username/$filename
+		if [[ ! -e $NOTEPATH/$username/$filename ]]
+		then
+			nano $NOTEPATH/$username/$filename
 		else
 			echo "file already exists with this name..."
 			sleep 0.7
@@ -45,15 +46,16 @@ case $c in
 	4)
 		echo -n "Enter filename:"
 		read filename
-		ls $NOTEPATH/$username/$filename &> /dev/null
-		if [[ $? -eq 0 ]];then
-			rm $NOTEPATH/$username/$filename
-			if [ $? -eq 0 ];then 
+		if [[ -e $NOTEPATH/$username/$filename ]]
+		then
+			rm -f $NOTEPATH/$username/$filename
+			if [[ $? -eq 0  ]]
+			then 
 				echo "file $filename successfully deleted..."
 				sleep 0.7
 			fi
 		else
-			echo "file doesn't exist,so not deleted..."
+			echo "file doesn't exist, so not deleted..."
 			sleep 0.7
 		fi
 		;;
@@ -63,4 +65,3 @@ case $c in
 		;;
 	esac
 done
-		
