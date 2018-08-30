@@ -20,7 +20,7 @@ It provide facilities like:
  Make sure that both of the files are in Executable mode.
  
 ## Tools and Utilities used:
-Used ssh to create connection of client with the server.
-grep, sed and awk for text processing tasks.
-sshpass to feed the password to ssh in non-interactive mode which is in by default in interactive mode.
+Used ssh to create connection of client with the server.  
+grep, sed and awk for text processing tasks.  
+sshpass to feed the password to ssh in non-interactive mode which is in by default in interactive mode.  
  
