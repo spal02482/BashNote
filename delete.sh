@@ -1,3 +1,4 @@
+#!/bin/bash
 delete_user()
 {
 	clear

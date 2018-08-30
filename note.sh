@@ -1,6 +1,7 @@
+#!/bin/bash
 clear
 NOTEFILE=users.txt
-NOTEPATH=$HOME/notes
+NOTEPATH=./notes
 declare -A users
 source init_userdb.sh
 source login.sh
@@ -19,7 +20,7 @@ do
 	echo -n `tput cup $(( $row / 2 - 5 )) $(( $col / 2 - 15 ))` 'Enter Choice:'
 	read choice
 	case $choice in 
-		l)
+		1)
 			username=""
 			login_user
 			if [[ $? -eq 0 ]]; then
@@ -31,7 +32,7 @@ do
 				sleep 0.7;clear
 			fi
 			;;
-		r)
+		2)
 			username=""
 			register_user
 			if [[ $? -eq 0 ]] ; then
@@ -47,7 +48,7 @@ do
 			fi
 			init_userdb
 			;;
-		d)
+		3)
 			username=""
 			delete_user
 			if [[ $? -eq 0 ]]; then
@@ -63,7 +64,7 @@ do
 			fi
 			init_userdb
 			;;
-		q)
+		4)
 			clear
 			break
 			;;

@@ -1,3 +1,4 @@
+#!/bin/bash
 init_userdb()
 {
 	while read p

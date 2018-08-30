@@ -1,4 +1,0 @@
-zenity --list --text '<span font="12"><b>Welcome to BashNote</b></span>' --radiolist --column="Pick" --column="Choose" TRUE Login FALSE Register FALSE Delete FALSE Quit --width 1366 --height 728
-zenity --info --text  '<span font="13">"Successfully logged in..."</span>'
-zenity --error --text  '<span font="13">"Error in login..."</span>'
-output=$(zenity --username --password);username=$(echo $output | cut -f 1 -d '|');password=$(echo $output|cut -f 2 -d '|')

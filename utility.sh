@@ -1,3 +1,4 @@
+#!/bin/bash
 while true
 do
 	clear
@@ -9,7 +10,7 @@ do
 	echo -n `tput cup $(( $row / 2 - 4 )) $(( $col / 2 - 15 ))` 'Enter Choice:'
 	read c
 case $c in 
-	l) 
+	1) 
 		n=$(ls $NOTEPATH/$username | wc -l)
 		if [[ $n -ne 0 ]];then
 			ls $NOTEPATH/$username
@@ -19,7 +20,7 @@ case $c in
 			sleep 0.7
 		fi
 		;;
-	r)
+	2)
 		echo -n "Enter filename:"
 		read filename
 		ls $NOTEPATH/$username/$filename &> /dev/null
@@ -30,7 +31,7 @@ case $c in
 			sleep 0.7
 		fi
 		;;
-	c)
+	3)
 		echo -n "Enter filename:"
 		read filename
 		ls $NOTEPATH/$username/$filename &> /dev/null
@@ -41,7 +42,7 @@ case $c in
 			sleep 0.7
 		fi
 		;;
-	d)
+	4)
 		echo -n "Enter filename:"
 		read filename
 		ls $NOTEPATH/$username/$filename &> /dev/null
@@ -56,7 +57,7 @@ case $c in
 			sleep 0.7
 		fi
 		;;
-	s)
+	5)
 		clear
 		break
 		;;

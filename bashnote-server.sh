@@ -1,7 +1,8 @@
-if [ ! -d ~/notes ];then
+#!/bin/bash
+if [ ! -d ./notes ]; then
 	echo "directory notes doesn't exist, creating one..."
-	mkdir ~/notes
-	if [ $? ];then 
+	mkdir ./notes
+	if [ $? ]; then 
 		echo "notes successfully created..." 
 	else
 		echo "error in creating directory notes..."
@@ -12,7 +13,7 @@ fi
 install=$(dpkg -s openssh-server | grep Status)
 if [[ $install == 'Status: install ok installed' ]]; then
 	echo "openssh-server is installed..."
-	serv=$(service ssh status | grep Active: | awk '{print $2;}')
+	serv=$(systemctl status ssh | grep Active: | awk '{print $2;}')
 	if [ $serv == 'active' ];then
 		echo "service is active..."
 	elif [ $serv == 'inactive' ];then
